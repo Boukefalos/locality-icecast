@@ -54,9 +54,10 @@ public class ShoutRunnable implements Runnable {
 				mediaQueue = requestManager.processRequest(request);
 			} catch (SecurityException e) {
 				writeNegativeResponse(out);
-				
+				e.printStackTrace();
 				//TODO: Change the execution flow of this method
 				throw new IOException("Change this code please");
+				
 			}
 			
 			sendStartStreamResponse(mediaQueue, out);

@@ -14,7 +14,7 @@ public class TagDaoImpl extends HibernateDaoSupport implements TagDao {
 	 * {@inheritDoc}
 	 */	
 	public void delete(Tag tag) {
-		getHibernateTemplate().delete(tag);		
+		//getHibernateTemplate().delete(tag);		
 	}
 	
 	/**

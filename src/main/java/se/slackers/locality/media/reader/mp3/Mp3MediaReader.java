@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
+import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 
 import se.slackers.locality.media.Frame;
@@ -66,9 +67,9 @@ public class Mp3MediaReader implements MediaReader {
 			AudioFile audioFile = AudioFileIO.read(media.getMediaFile());
 			Tag tag = audioFile.getTag();
 			
-			metadata.set(MetadataType.ARTIST, tag.getFirstArtist() );
-			metadata.set(MetadataType.ALBUM, tag.getFirstAlbum() );
-			metadata.set(MetadataType.TITLE, tag.getFirstTitle() );
+			metadata.set(MetadataType.ARTIST, tag.getFirst(FieldKey.ARTIST));
+			metadata.set(MetadataType.ALBUM, tag.getFirst(FieldKey.ALBUM));
+			metadata.set(MetadataType.TITLE, tag.getFirst(FieldKey.TITLE));
 			
 			log.info("Opening "+metadata);
 		} catch (Exception e) {

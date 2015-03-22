@@ -14,7 +14,7 @@ public class MetaTagDaoImpl extends HibernateDaoSupport implements MetaTagDao {
 	 * {@inheritDoc}
 	 */	
 	public void delete(MetaTag tag) {
-		getHibernateTemplate().delete(tag);		
+		//getHibernateTemplate().delete(tag);		
 	}
 	
 	/**
